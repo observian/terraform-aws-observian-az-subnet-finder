@@ -5,8 +5,7 @@ Usage
 ```hcl
 
 module "az_subnet_finder" {
-  source = "tbd"
-
+  source = "github.com/observian/terraform-aws-observian-az-subnet-finder"
   base_cidr = "10.10.0.0/16"
 }
 

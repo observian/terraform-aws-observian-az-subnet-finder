@@ -15,7 +15,7 @@ data "aws_availability_zones" "azs" {
 }
 
 module "shared" {
-  source = "../shared"
+  source = "github.com/observian/terraform-any-observian-shared"
 }
 
 locals {
