@@ -1,5 +1,5 @@
 # terraform-aws-observian-az-subnet-finder
-Creates cidrs for subnets for all availability zones in an aws region. It will create as many groups as needed for the azs.
+Creates cidrs for subnets for all availability zones in an aws region. It will create as 4 groups by default but can be overrided. It will add 8 to the subnet mask by default. 
 
 Usage
 ```hcl
@@ -22,7 +22,7 @@ module "vpc" {
 }
 ```
 
-This will create for region us-west-1 the output subnets of:
+This will create, for region us-west-1, the output subnets of:
 ```
 subnets = [
   [
@@ -43,3 +43,5 @@ subnets = [
   ],
 ]
 ```
+
+Which are consumed in the vpc module usage above.
