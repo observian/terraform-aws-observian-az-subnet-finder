@@ -6,10 +6,10 @@ terraform {
 }
 
 # Here for testing
-provider "aws" {
-  region = "us-west-1"
-  # region = "us-east-1"
-}
+# provider "aws" {
+#   region = "us-west-1"
+#   # region = "us-east-1"
+# }
 
 data "aws_availability_zones" "azs" {
   state = "available"
