@@ -1,17 +1,20 @@
 terraform {
-  required_version = ">= 0.12"
+  required_version = ">= 0.13"
   required_providers {
     aws = "~> 2.7"
   }
 }
 
 provider "aws" {
-  region = "us-west-1"
+  region = "us-east-1"
 }
 
 module "az_subnet_finder" {
   source = "github.com/observian/terraform-aws-observian-az-subnet-finder"
   base_cidr = var.base_cidr
+  cidr_bit_mask      = 4
+  az_addition_buffer = 1
+  max_azs_to_use = 3
 }
 
 module "vpc" {
@@ -30,3 +33,4 @@ variable "base_cidr" {
   description = "The base cidr that subnets are being calculated"
   default     = "10.10.0.0/16"
 }
+
